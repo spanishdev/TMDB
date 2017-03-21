@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TMDB App</string>
+
+    <string name="apiKey">93aea0c77bc168d8bbce3918cefefa45</string>
+
+    <string name="hint_search_text">Search Movie</string>
+
+    <!-- ERROR -->
+    <string name="error_no_connection">There was a connection problem</string>
+    <string name="message_no_elements">No elements available</string>
+</resources>
