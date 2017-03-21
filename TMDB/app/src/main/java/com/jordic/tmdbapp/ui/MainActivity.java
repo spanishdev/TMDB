@@ -76,6 +76,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         } else presenter.getPopularMovies(getString(R.string.apiKey), currentPage);
     }
 
+    /**
+     * Initializes Dagger 2 and the Injections
+     */
     private void initializeDagger() {
 
         ApplicationComponent component = ((TMDBApplication) getApplicationContext()).getComponent();
@@ -170,6 +173,10 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         movieAdapter.showLoading(show);
     }
 
+    /**
+     * Add a list of movies to the Recyclerview if it is not empty. Otherwise it will show an error message.
+     * @param movies List of movies to add
+     */
     @Override
     public void addMovies(List<Movie> movies) {
         if (movies != null && !movies.isEmpty()) {
@@ -182,6 +189,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         }
     }
 
+    /**
+     * Clear all the movies from the RecyclerView
+     */
     @Override
     public void clearMovies() {
         presenter.cancelRequest();
@@ -189,6 +199,10 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         currentPage = 1;
     }
 
+    /**
+     * Shows an error from the String resources
+     * @param resId Id of the String resource
+     */
     @Override
     public void showError(int resId) {
         errorTextView.setVisibility(View.VISIBLE);

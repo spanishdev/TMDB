@@ -27,6 +27,11 @@ public class MainPresenter implements MainContract.Presenter {
     RetrofitManager retrofitManager;
     Subscription requestSubscription;
 
+    /**
+     *  Presenter constructor
+     * @param mainView View to do the UI updates
+     * @param retrofitManager RetrofitManager, which manages the Retrofit calls
+     */
     @Inject
     public MainPresenter( MainContract.View mainView, RetrofitManager retrofitManager)
     {
@@ -34,6 +39,11 @@ public class MainPresenter implements MainContract.Presenter {
         this.retrofitManager=retrofitManager;
     }
 
+    /**
+     * Gets the Configuration from the Server and stores the Image Url to the Preferences
+     * @param apiKey Api Key from TMDB
+     * @param preferences This is the manager of Preferences, stores and gets the data
+     */
     @Override
     public void getConfiguration(final String apiKey, final PreferenceOperations preferences) {
         mainView.showLoading(true);
@@ -73,6 +83,11 @@ public class MainPresenter implements MainContract.Presenter {
                 });
     }
 
+    /**
+     * It gets the Popular Movies from TMDB and updates the UI
+     * @param apiKey Api Key from TMDB
+     * @param page Page number
+     */
     @Override
     public void getPopularMovies(String apiKey, int page) {
 
@@ -107,6 +122,12 @@ public class MainPresenter implements MainContract.Presenter {
                 });
     }
 
+    /**
+     * Search the movies with the specific keyword and then updates the UI
+     * @param apiKey Api Key from TMDB
+     * @param keyword Word wanted to Search
+     * @param page Page number
+     */
     @Override
     public void searchMovies(String apiKey,String keyword, int page) {
 
@@ -139,6 +160,9 @@ public class MainPresenter implements MainContract.Presenter {
                 });
     }
 
+    /**
+     * Cancels the request once called
+     */
     @Override
     public void cancelRequest() {
         if(requestSubscription!=null)

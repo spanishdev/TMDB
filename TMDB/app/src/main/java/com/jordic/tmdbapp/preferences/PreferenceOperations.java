@@ -27,6 +27,12 @@ public class PreferenceOperations {
 
     //GETTERS
 
+    /**
+     * Returns the String with the given Key. In case that it does not exist, returns the defaultValue
+     * @param key Key to get
+     * @param defaultValue Default value to return in case that "key" does not exist
+     * @return The String associated with the key if exists, defaultValue otherwise
+     */
     public String getString(String key, @Nullable String defaultValue)
     {
         if(key==null)
@@ -37,6 +43,11 @@ public class PreferenceOperations {
 
     //SETTERS
 
+    /**
+     * Sotres a new String to the given key into SharedPreferences
+     * @param key Key to associate
+     * @param value Value to store
+     */
     public void putString(String key, String value)
     {
         if(key==null)

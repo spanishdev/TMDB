@@ -10,6 +10,8 @@ import rx.Observable;
 
 /**
  * Created by J on 16/03/2017.
+ *
+ * This class manages all the Retrofit calls, returning responses as Observables
  */
 
 public class RetrofitManager {

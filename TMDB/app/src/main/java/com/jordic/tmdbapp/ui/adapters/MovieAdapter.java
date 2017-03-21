@@ -22,6 +22,8 @@ import butterknife.ButterKnife;
 
 /**
  * Created by J on 16/03/2017.
+ *
+ * This is the adapter of the RecyclerView which shows the movies
  */
 
 public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -109,6 +111,13 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         this.preferences = preferences;
     }
 
+    /**
+     * Returns a new ViewHolder. It depends of the type of View. If it is a Movie Type, it will return a MovieViewHolder.
+     * Otherwise it will return a LoadingViewHolder
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
